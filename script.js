@@ -7,6 +7,8 @@ let second_nmb=0;
 let char ="";
 
 
+
+
 numbers.forEach((element)=>{
     element.addEventListener('click',(e)=>{
         if(input.innerHTML==="0" || first_nmb===0){
@@ -18,6 +20,9 @@ numbers.forEach((element)=>{
             input.insertAdjacentHTML("beforeend",e.currentTarget.innerHTML);
             second_nmb=parseInt(e.currentTarget.innerHTML);
             
+        }
+        while(!second_nmb===""){
+            calcule();
         }
     });
 });
@@ -43,18 +48,22 @@ function  calcule() {
     
     switch (char) {
         case "+":
-        
             input.innerHTML=parseInt(first_nmb+second_nmb);
             first_nmb=parseInt(first_nmb+second_nmb);
             break;
 
             case "-":
+                input.innerHTML=parseInt(first_nmb-second_nmb);
+                first_nmb=parseInt(first_nmb-second_nmb);
             break;
-            case "*":
+            case "×":
+                input.innerHTML=parseInt(first_nmb*second_nmb);
+                first_nmb=parseInt(first_nmb*second_nmb);
             
             break;
-            case "/":
-            
+            case "÷":
+                input.innerHTML=parseInt(first_nmb/second_nmb);
+                first_nmb=parseInt(first_nmb/second_nmb);
             break;
        
         default:
